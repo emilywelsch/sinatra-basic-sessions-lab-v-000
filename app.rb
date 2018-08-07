@@ -8,13 +8,12 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    @session = session
     erb :index
   end
 
   post '/checkout' do
+    session[:item] = params[:item]
     @session = session
-    # displays the shopping cart contents
-    # sets the params in the session hash
+    erb :checkout
   end
 end
