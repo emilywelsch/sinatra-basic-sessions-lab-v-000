@@ -14,6 +14,8 @@ class App < Sinatra::Base
   end
 
   post '/checkout' do
+    session["name"] = "Victoria"
+    @session = session
     # displays the shopping cart contents
     # sets the params in the session hash
   end
